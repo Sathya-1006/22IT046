@@ -5,10 +5,11 @@ FROM python:3.9-slim
 WORKDIR /app
 
 # Copy the Python file
-COPY personal-api.py .
+COPY ml-model.py .
 
-# Install Flask
-RUN pip install flask
+COPY requirement.txt .
+RUN pip install --no-cache-dir -r requirement.txt
+
 
 # Run the API
-CMD ["python", "personal-api.py"]
+CMD ["python", "ml-model.py"]

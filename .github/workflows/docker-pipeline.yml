@@ -1,1 +1,19 @@
+name: docker-pipeline-sathya
+on: push
+jobs:
+  docker-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Your Register Number
+        run: echo "Hello World! - 22IT046"
+        
+      - name: Checkout
+        uses: actions/checkout@v4
+        
+      - name: Docker Build
+        run: docker build -t sathyapm1006/ml-model-22it046 .
 
+      - name: Docker Images
+        run: docker images
+
+   
